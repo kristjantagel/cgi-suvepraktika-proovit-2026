@@ -2,15 +2,15 @@
 
 ## Time Log
 
-| Phase | Task | Time Spent |
-|---|---|------------|
-| 1 | Scaffolding, entities, seeder |            |
-| 2 | Backend REST API |            |
-| 3 | Frontend floor plan + filters |            |
-| 4 | Recommendation engine |            |
-| 5 | Booking flow |            |
-| 6 | Polish + documentation | 30min      |
-| **Total** | | 30min      |
+| Phase | Task | Time Spent     |
+|---|---|----------------|
+| 1 | Scaffolding, entities, seeder | ✅ Done - 30min |
+| 2 | Backend REST API |                |
+| 3 | Frontend floor plan + filters |                |
+| 4 | Recommendation engine |                |
+| 5 | Booking flow |                |
+| 6 | Polish + documentation | 30min          |
+| **Total** | | 30min          |
 
 ---
 
@@ -20,7 +20,7 @@
 - Party size of **1** is valid
 - The floor plan layout is **fixed** — tables cannot be repositioned by guests
 - "Zone" filtering is optional; leaving it blank shows all zones
-- Randomly generated seed reservations are spread across today ± 3 days, one time slot per table, to avoid overlap complexity in the seeder
+- Randomly generated seed reservations are spread across today ± 2 days, up to one time slot per table, to avoid overlap complexity in the seeder
 - Occupied tables are not clickable — the user can only select available tables
 
 ---
