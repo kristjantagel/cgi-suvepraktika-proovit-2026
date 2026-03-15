@@ -19,3 +19,7 @@ frontend/dist/
 
 # Spring Boot static (generated build output, not source)
 backend/src/main/resources/static/
+
+# AI assistant config files
+CLAUDE.md
+GEMINI.md
