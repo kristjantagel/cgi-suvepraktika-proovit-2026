@@ -13,11 +13,19 @@ Guests browse an interactive visual floor plan of the restaurant and reserve a t
 
 Existing reservations are randomly generated on startup to simulate a realistic occupancy state.
 
+## Features
+
+- Visual SVG floor plan with 19 tables across 3 zones (indoor, terrace, private room)
+- Filter by date, time, party size, zone, and seating preferences
+- Score-based recommendation engine — prefers the best capacity fit and matches preferences
+- Tables outside the selected zone are dimmed; recommended table pulses green
+- Reservations auto-expire after their 2-hour window passes
+- Booking confirmation includes a TheMealDB meal suggestion for the visit
 ## Tech Stack
 
 | Layer | Technology |
 |---|---|
-| Backend | Spring Boot 3.5.x, Java 25 |
+| Backend | Spring Boot 3.5.0, Java 25 |
 | Database | H2 (in-memory, no setup required) |
 | Frontend | React 19 + Vite, plain SVG for floor plan |
 | API | REST (JSON) |
@@ -73,8 +81,6 @@ JDBC URL: `jdbc:h2:mem:restaurant`
 cd backend
 ./mvnw test
 ```
-
----
 
 ## Documentation
 

@@ -1,0 +1,147 @@
+.floor-plan-wrapper {
+  position: relative;
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.floor-plan-wrapper svg {
+  display: block;
+}
+
+/* Table states */
+.table-available rect {
+  fill: #3498db;
+  cursor: pointer;
+  transition: fill 0.15s ease;
+}
+
+.table-available:hover rect {
+  fill: #2980b9;
+}
+
+.table-occupied rect {
+  fill: #e74c3c;
+  cursor: not-allowed;
+}
+
+.table-recommended rect {
+  fill: #2ecc71;
+  cursor: pointer;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.table-recommended:hover rect {
+  fill: #27ae60;
+}
+
+.table-selected rect {
+  stroke: #f39c12;
+  stroke-width: 0.5;
+}
+
+/* SVG text inside tables */
+.table-available text,
+.table-occupied text,
+.table-recommended text {
+  font-size: 2.5px;
+  fill: white;
+  font-family: system-ui, sans-serif;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Zone labels */
+.zone-label {
+  font-size: 3px;
+  fill: #888;
+  font-family: system-ui, sans-serif;
+  text-anchor: middle;
+  dominant-baseline: auto;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Zone divider lines */
+.zone-divider {
+  stroke: #ccc;
+  stroke-width: 0.2;
+  stroke-dasharray: 1, 1;
+}
+
+/* Empty and loading states */
+.floor-plan-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  color: #999;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.floor-plan-loading-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  color: #555;
+  gap: 10px;
+  z-index: 10;
+}
+
+.floor-plan-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ddd;
+  border-top-color: #3498db;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+/* Legend */
+.floor-plan-legend {
+  display: flex;
+  gap: 16px;
+  padding: 10px 14px;
+  border-top: 1px solid #e0e0e0;
+  background: #fff;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: #555;
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.legend-dot--available  { background: #3498db; }
+.legend-dot--occupied   { background: #e74c3c; }
+.legend-dot--recommended { background: #2ecc71; }
+.legend-dot--selected   { background: #fff; border: 2px solid #f39c12; }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

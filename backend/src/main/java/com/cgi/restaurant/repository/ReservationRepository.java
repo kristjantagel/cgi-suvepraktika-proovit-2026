@@ -13,7 +13,8 @@ public interface ReservationRepository extends JpaRepository<Reservation, Long> 
     @Query("SELECT r FROM Reservation r WHERE r.table.id = :tableId " +
            "AND r.date = :date " +
            "AND r.startTime < :end " +
-           "AND r.endTime > :start")
+           "AND r.endTime > :start " +
+           "AND r.expired = false")
     List<Reservation> findConflicting(
         @Param("tableId") Long tableId,
         @Param("date") LocalDate date,
